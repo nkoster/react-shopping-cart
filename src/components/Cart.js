@@ -7,7 +7,7 @@ const Cart = ({ initialItems }) => {
     const [items, setItems] = useState(initialState || initialItems)
 
     useEffect(_ => {
-        if (items) window.localStorage.setItem('items', JSON.stringify(items))
+        window.localStorage.setItem('items', JSON.stringify(items))
     }, [items])
 
     const total = items.reduce((t, item) => t + item.price * item.qty, 0)
